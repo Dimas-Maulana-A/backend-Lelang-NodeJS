@@ -70,7 +70,7 @@ module.exports = {
       .create(data)
       .then((result) => {
         res.json({
-          data: result,
+          data: data,
         });
       })
       .catch((err) => {
@@ -95,7 +95,7 @@ module.exports = {
       })
       .then((result) => {
         res.json({
-          data: result,
+          data: data,
         });
       })
       .catch((err) => {
@@ -172,6 +172,7 @@ module.exports = {
         const sign = jwt.sign((id, username), process.env.TOKEN);
         res.json({
           token: sign,
+          __id: id
         });
       })
       .catch((err) => {
