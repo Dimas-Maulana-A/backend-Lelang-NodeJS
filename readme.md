@@ -1,4 +1,4 @@
-# Backend Lelang Node JS (under testing)
+# Backend Lelang Node JS (not yet tested)
 
 ## Get Started
 
