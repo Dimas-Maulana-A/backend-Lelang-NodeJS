@@ -65,6 +65,7 @@ module.exports = {
       username: username,
       password: hash,
       role: role,
+      status: false,
     };
     user
       .create(data)
@@ -78,7 +79,7 @@ module.exports = {
       });
   },
   controllerUpdateUser: async (req, res) => {
-    const { name, username, password, role } = req.body;
+    const { name, username, password, role, status } = req.body;
     const salt = await bcrypt.genSalt();
     const hash = await bcrypt.hash(password, salt);
     const data = {
@@ -86,6 +87,7 @@ module.exports = {
       username: username,
       password: hash,
       role: role,
+      status: status
     };
     user
       .update(data, {
